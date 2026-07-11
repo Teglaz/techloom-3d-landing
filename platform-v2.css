@@ -1,0 +1,1 @@
+.feature-grid{position:relative;isolation:isolate}.feature-grid:before{content:"";position:absolute;inset:-60px -80px;z-index:-1;background:radial-gradient(ellipse,#071a2ff5 20%,#020914e8 64%,transparent 78%);filter:blur(12px)}.demo-card{background:linear-gradient(155deg,#0a2037fa,#030b16fc)!important}
