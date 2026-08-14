@@ -13,12 +13,57 @@ h1,h2,h3,.brand,.eyebrow,.button,.trust,.nav{font-family:Sora,system-ui,sans-ser
 .hero h1 em,.workflow h2 em,.eyebrow,.light{color:var(--orange)}
 .brand-logo{object-fit:contain}
 
+/* Keep the WebGL artwork inside the hero. The earlier fixed stage caused the
+   garment and its depth layers to sit behind every following section. */
+#webgl-stage{
+  position:absolute!important;
+  inset:0!important;
+  z-index:0!important;
+}
+.hero-3d{
+  overflow:hidden!important;
+  isolation:isolate;
+}
+
 .platform,.metrics{overflow:clip}
 .demo-card{overflow:clip!important}
 .object-stage{overflow:clip}
 .spec-chip,.approval,.rev-note{transform:none!important;max-width:calc(100% - 16px)}
 .approval,.rev-note{right:8px}
 .revision-stage .c-c{right:15%}
+
+/* Replace the oversized floating metric cards with a restrained principle
+   strip. These are product rules, not dashboard metrics. */
+.metrics{
+  margin-top:0!important;
+  padding:0!important;
+  gap:0!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  border-top:1px solid rgba(183,196,207,.22)!important;
+  border-bottom:1px solid rgba(183,196,207,.22)!important;
+}
+.metrics>div{
+  min-height:88px!important;
+  padding:22px 28px!important;
+  border:0!important;
+  border-right:1px solid rgba(183,196,207,.18)!important;
+  background:rgba(15,30,52,.72)!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  transform:none!important;
+  transition:none!important;
+  justify-content:center;
+}
+.metrics>div:last-of-type{border-right:0!important}
+.metrics strong{
+  font-size:clamp(11px,1vw,14px)!important;
+  line-height:1.35!important;
+  letter-spacing:.09em;
+  color:var(--off)!important;
+  text-shadow:none!important;
+  overflow-wrap:anywhere;
+}
+.metrics>p{display:none!important}
 
 .hero-static-fallback{
   position:absolute;
@@ -77,6 +122,14 @@ h1,h2,h3,.brand,.eyebrow,.button,.trust,.nav{font-family:Sora,system-ui,sans-ser
 @media(max-width:800px){
   .nav nav{background:var(--navy)}
   .nav nav a{color:var(--off)}
+  .metrics{grid-template-columns:1fr!important}
+  .metrics>div{
+    min-height:64px!important;
+    padding:18px 20px!important;
+    border-right:0!important;
+    border-bottom:1px solid rgba(183,196,207,.16)!important;
+  }
+  .metrics>div:last-of-type{border-bottom:0!important}
   .hero-static-fallback{top:8%;right:0;width:100%;height:58%;opacity:.42}
   .webgl-ready .hero-static-fallback{opacity:.18}
   .fallback-garment{width:min(210px,42%)}
