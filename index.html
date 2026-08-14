@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Techloom turns product ideas into expert-validated, factory-ready technical documentation." />
-  <title>Techloom — AI-assisted tech packs</title>
+  <meta name="description" content="Techloom structures apparel product inputs into traceable technical documentation, with AI-assisted proposals separated from expert validation and controlled release." />
+  <title>Techloom — AI-assisted apparel technical documentation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="immersive.css" />
   <link rel="stylesheet" href="platform-3d.css" />
   <link rel="stylesheet" href="platform-v2.css" />
+  <link rel="stylesheet" href="stability.css" />
 </head>
 <body>
   <header class="nav shell">
@@ -32,13 +33,17 @@
   <main id="top">
     <section class="hero hero-3d">
       <div id="webgl-stage" aria-hidden="true"></div>
+      <div class="hero-webgl-fallback" aria-hidden="true">
+        <img src="assets/techloom-logo-light.png" alt="">
+        <p>STRUCTURE · TRACE · REVIEW</p>
+      </div>
       <div class="hero-hud"><span>PRODUCT DATA</span><span>TECHNICAL LOGIC</span><span>VALIDATED OUTPUT</span></div>
       <div class="hero-copy reveal">
         <p class="eyebrow"><span></span> AI-ASSISTED · EXPERT-VALIDATED</p>
         <h1>From product data<br><em>to factory-ready documentation.</em></h1>
-        <p class="lede">Techloom turns sketches, references and technical inputs into structured, traceable documentation — while keeping AI-proposed values separate from expert-approved production decisions.</p>
+        <p class="lede">Techloom structures sketches, references and technical inputs into traceable documentation — while keeping AI proposals separate from technical review, authorized approval and controlled release.</p>
         <div class="actions"><a class="button primary" href="#contact">Request a demo <span>↗</span></a><a class="button ghost" href="#workflow">Explore the workflow</a></div>
-        <div class="trust"><span>STRUCTURED DATA</span><span>TRACEABLE DECISIONS</span><span>FACTORY-READY OUTPUT</span></div>
+        <div class="trust"><span>STRUCTURED DATA</span><span>TRACEABLE DECISIONS</span><span>RELEASE-GATED OUTPUT</span></div>
       </div>
       <div class="hero-object-label"><span>PRODUCT DATA → TECHNICAL LOGIC → VALIDATED OUTPUT</span><strong>01</strong><p>Move the cursor.<br>Scroll through the layers.</p></div>
     </section>
@@ -48,26 +53,26 @@
     </section>
 
     <section class="platform shell" id="platform">
-      <div class="section-head"><p class="eyebrow"><span></span> THE PLATFORM</p><h2>One product record.<br>Every decision traceable.</h2><p>Techloom connects source inputs, technical data, validation status and revision history in one controlled workflow — so product teams and manufacturers work from the same approved information.</p></div>
+      <div class="section-head"><p class="eyebrow"><span></span> THE PLATFORM</p><h2>One product record.<br>Every decision traceable.</h2><p>Techloom connects source inputs, technical data, validation status and revision history in one controlled workflow — so product teams and manufacturers work from the same controlled product information.</p></div>
       <div class="feature-grid">
-        <article class="demo-card garment-card"><b>01 / STRUCTURE</b><div class="object-stage garment-stage" aria-hidden="true"><div class="garment-layer back"></div><div class="garment-layer mid"></div><div class="garment-layer front"><i></i><i></i><i></i><i></i></div><span class="measure m1">BOM</span><span class="measure m2">MEASUREMENTS</span><span class="spec-chip">CONSTRUCTION</span></div><h3>Structured technical documentation</h3><p>Organize BOM, measurements, construction details and source references into a consistent technical product record.</p><a href="#contact">Explore tech packs →</a></article>
-        <article class="demo-card validation-card" id="validation"><b>02 / VALIDATE</b><div class="object-stage network-stage" aria-hidden="true"><div class="network-core">✓</div><i class="beam b1"></i><i class="beam b2"></i><i class="beam b3"></i><span class="node n1">PROPOSED</span><span class="node n2">REVIEW</span><span class="node n3">APPROVED</span><span class="approval">EXPERT APPROVED</span></div><h3>Proposed vs approved</h3><p>AI-assisted suggestions remain clearly marked until reviewed. Missing, ambiguous and conflicting information is surfaced before release.</p><a href="#contact">Meet the workflow →</a></article>
-        <article class="demo-card revision-card"><b>03 / TRACE</b><div class="object-stage revision-stage" aria-hidden="true"><div class="rev-cube c-a"><span>V1</span></div><div class="rev-cube c-b"><span>V2</span></div><div class="rev-cube c-c"><span>V3</span></div><i class="timeline"></i><span class="rev-note">LATEST / APPROVED</span></div><h3>Traceable revisions</h3><p>Preserve what changed, why it changed and which version is approved for sampling or production.</p><a href="#contact">View revision logic →</a></article>
+        <article class="demo-card garment-card"><b>01 / STRUCTURE</b><div class="object-stage garment-stage" aria-hidden="true"><div class="garment-layer back"></div><div class="garment-layer mid"></div><div class="garment-layer front"><i></i><i></i><i></i><i></i></div><span class="measure m1">BOM</span><span class="measure m2">MEASUREMENTS</span><span class="spec-chip">CONSTRUCTION</span></div><h3>Structured technical documentation</h3><p>Organize BOM, measurements, construction details and source references into a consistent technical product record.</p><a href="#contact">Request a workflow demo →</a></article>
+        <article class="demo-card validation-card" id="validation"><b>02 / VALIDATE</b><div class="object-stage network-stage" aria-hidden="true"><div class="network-core">✓</div><i class="beam b1"></i><i class="beam b2"></i><i class="beam b3"></i><span class="node n1">PROPOSED</span><span class="node n2">REVIEW</span><span class="node n3">DECISION</span><span class="approval">EXPERT REVIEW</span></div><h3>Proposed vs reviewed</h3><p>AI-assisted suggestions remain clearly identified as proposals. Technical review, authorization and release remain separate controlled decisions.</p><a href="#contact">Request a validation demo →</a></article>
+        <article class="demo-card revision-card"><b>03 / TRACE</b><div class="object-stage revision-stage" aria-hidden="true"><div class="rev-cube c-a"><span>V1</span></div><div class="rev-cube c-b"><span>V2</span></div><div class="rev-cube c-c"><span>V3</span></div><i class="timeline"></i><span class="rev-note">CURRENT / REVIEWED</span></div><h3>Traceable revisions</h3><p>Preserve what changed, why it changed and which revision is being prepared for a defined sampling or production gate.</p><a href="#contact">Request a revision demo →</a></article>
       </div>
     </section>
 
     <section class="workflow" id="workflow"><div class="shell workflow-inner">
       <div><p class="eyebrow light"><span></span> HOW IT WORKS</p><h2>From input<br><em>to controlled production data.</em></h2></div>
-      <ol><li><span>01</span><div><h3>Add your product input</h3><p>Upload a sketch, reference image, existing tech pack, measurements, material data or product requirements.</p></div></li><li><span>02</span><div><h3>Structure and detect gaps</h3><p>Techloom organizes the information and identifies missing, ambiguous or conflicting data.</p></div></li><li><span>03</span><div><h3>Review AI-assisted proposals</h3><p>Suggested values remain proposed — not approved — until they are technically reviewed and resolved.</p></div></li><li><span>04</span><div><h3>Approve and release</h3><p>Validated information is consolidated into a traceable, factory-ready technical package for sampling or production.</p></div></li></ol>
+      <ol><li><span>01</span><div><h3>Add your product input</h3><p>Upload a sketch, reference image, existing tech pack, measurements, material data or product requirements.</p></div></li><li><span>02</span><div><h3>Structure and detect gaps</h3><p>Techloom organizes the information and identifies missing, ambiguous or conflicting data.</p></div></li><li><span>03</span><div><h3>Review AI-assisted proposals</h3><p>Suggested values remain proposed — not approved — until they are technically reviewed and resolved.</p></div></li><li><span>04</span><div><h3>Validate for controlled release</h3><p>After technical review and required authorization, validated information can be consolidated for a defined sampling or production gate.</p></div></li></ol>
     </div></section>
 
     <section class="testimonial shell"><img src="assets/testimonial-aida.png" alt="Aida Čengić"><blockquote>“A tech pack should remove questions from the factory floor — not create new ones. Techloom is built to connect product intent with the technical decisions production actually needs.”</blockquote><div><strong>Aida Čengić</strong><span>Founder, Techloom · Head of Industrialization<br>MSc Clothing Technology &amp; Design</span></div></section>
 
-    <section class="standards shell" id="standards"><p class="eyebrow"><span></span> BUILT FOR MANUFACTURING</p><h2>Less ambiguity<br>before it reaches the factory.</h2><p>Techloom is not a one-click PDF generator.</p><p>It creates a controlled technical record where production-critical information can be reviewed, traced and approved.</p><div class="pill-row"><span>BOM & MATERIALS</span><span>MEASUREMENTS</span><span>CONSTRUCTION</span><span>MISSING INFORMATION</span><span>REVISIONS</span><span>APPROVALS</span></div></section>
+    <section class="standards shell" id="standards"><p class="eyebrow"><span></span> BUILT FOR MANUFACTURING</p><h2>Less ambiguity<br>before it reaches the factory.</h2><p>Techloom is not a one-click PDF generator.</p><p>It creates a controlled technical record where production-critical information can be reviewed and traced before any authorized approval or release.</p><div class="pill-row"><span>BOM & MATERIALS</span><span>MEASUREMENTS</span><span>CONSTRUCTION</span><span>MISSING INFORMATION</span><span>REVISIONS</span><span>CONTROLLED RELEASE</span></div></section>
 
-    <section class="cta shell" id="contact"><div><p class="eyebrow light"><span></span> READY TO BUILD?</p><h2>Turn product data into documentation<br>production can actually use.</h2><p>See how Techloom structures inputs, surfaces gaps and keeps technical decisions traceable from first draft to approved release.</p></div><a class="button white" href="mailto:hello@techloom.app">Request a demo <span>↗</span></a></section>
+    <section class="cta shell" id="contact"><div><p class="eyebrow light"><span></span> READY TO BUILD?</p><h2>Turn product data into documentation<br>production can actually use.</h2><p>See how Techloom structures inputs, surfaces gaps and keeps technical decisions traceable from first draft to controlled review.</p></div><a class="button white" href="mailto:hello@techloom.app">Request a demo <span>↗</span></a></section>
   </main>
-  <footer class="shell"><a class="brand" href="#top"><img class="brand-logo" src="assets/techloom-logo.png" alt=""><span>TECHLOOM</span></a><p>AI-assisted.<br>Expert-validated. Factory-ready.</p><div><a href="mailto:hello@techloom.app">hello@techloom.app</a><span>© 2026 Techloom</span></div></footer>
+  <footer class="shell"><a class="brand" href="#top"><img class="brand-logo" src="assets/techloom-logo.png" alt=""><span>TECHLOOM</span></a><p>AI-assisted.<br>Expert-validated. Release-controlled.</p><div><a href="mailto:hello@techloom.app">hello@techloom.app</a><span>© 2026 Techloom</span></div></footer>
   <script src="script.js"></script><script src="immersive.js"></script><script type="importmap">{"imports":{"three":"./assets/vendor/three.module.min.js","three/addons/":"./assets/vendor/addons/"}}</script><script type="module" src="three-scene.js"></script>
 </body>
 </html>

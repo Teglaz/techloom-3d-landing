@@ -1,1 +1,58 @@
-const haze=document.createElement('div');haze.className='depth-haze';document.body.appendChild(haze);const floats=[...document.querySelectorAll('.metrics>*,.section-head>* ,.feature-grid article,.workflow li,.testimonial,.pill-row span,.cta')];floats.forEach((el,i)=>{el.classList.add('float-3d');el.dataset.depth=String(10+(i%5)*12)});let mx=0,my=0,sy=scrollY;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;haze.style.setProperty('--hx',`${e.clientX}px`);haze.style.setProperty('--hy',`${e.clientY}px`)});addEventListener('scroll',()=>sy=scrollY,{passive:true});function floatLoop(t){floats.forEach((el,i)=>{const r=el.getBoundingClientRect(),visible=r.bottom>0&&r.top<innerHeight;if(!visible)return;const depth=+el.dataset.depth,center=(r.top+r.height/2-innerHeight/2)/innerHeight;const lift=Math.sin(t*.0007+i)*5;const rx=-my*(1+depth/40),ry=mx*(1+depth/35),pz=depth*(1-Math.min(1,Math.abs(center)));el.style.transform=`translate3d(${mx*depth*.22}px,${lift-center*depth*.35}px,${pz}px) rotateX(${rx}deg) rotateY(${ry}deg)`});requestAnimationFrame(floatLoop)}requestAnimationFrame(floatLoop);
+const motionAllowed =
+  !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+  !window.matchMedia('(max-width: 1000px)').matches;
+
+if (motionAllowed) {
+  const haze = document.createElement('div');
+  haze.className = 'depth-haze';
+  document.body.appendChild(haze);
+
+  // Preserve Milan's depth motion while keeping edge-bound cards stable.
+  const floats = [
+    ...document.querySelectorAll(
+      '.section-head > *, .workflow li, .testimonial, .pill-row span, .cta'
+    ),
+  ];
+
+  floats.forEach((element, index) => {
+    element.classList.add('float-3d');
+    element.dataset.depth = String(10 + (index % 5) * 12);
+  });
+
+  let mouseX = 0;
+  let mouseY = 0;
+
+  window.addEventListener('pointermove', (event) => {
+    mouseX = event.clientX / window.innerWidth - 0.5;
+    mouseY = event.clientY / window.innerHeight - 0.5;
+    haze.style.setProperty('--hx', `${event.clientX}px`);
+    haze.style.setProperty('--hy', `${event.clientY}px`);
+  });
+
+  function floatLoop(time) {
+    floats.forEach((element, index) => {
+      const rect = element.getBoundingClientRect();
+      const visible = rect.bottom > 0 && rect.top < window.innerHeight;
+      if (!visible) return;
+
+      const depth = Number(element.dataset.depth);
+      const center =
+        (rect.top + rect.height / 2 - window.innerHeight / 2) /
+        window.innerHeight;
+      const lift = Math.sin(time * 0.0007 + index) * 5;
+      const rotateX = -mouseY * (1 + depth / 40);
+      const rotateY = mouseX * (1 + depth / 35);
+      const translateZ = depth * (1 - Math.min(1, Math.abs(center)));
+
+      element.style.transform =
+        `translate3d(${mouseX * depth * 0.22}px,${lift - center * depth * 0.35}px,${translateZ}px) ` +
+        `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    window.requestAnimationFrame(floatLoop);
+  }
+
+  window.requestAnimationFrame(floatLoop);
+} else {
+  document.documentElement.classList.add('reduced-immersion');
+}
