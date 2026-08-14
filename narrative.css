@@ -122,8 +122,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
     radial-gradient(circle at 66% 45%, rgba(23, 77, 117, 0.54), transparent 36%),
     linear-gradient(135deg, #020914, #06172a 52%, #020914);
 }
-#narrative-stage { position: absolute; inset: 0; }
-#narrative-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#webgl-stage { position: absolute; inset: 0; }
+#webgl-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .stage-vignette {
   position: absolute;
   inset: 0;
