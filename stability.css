@@ -34,9 +34,11 @@ body {
 }
 
 .metrics strong {
-  font-size: clamp(26px, 3vw, 42px) !important;
-  line-height: 1.08;
-  overflow-wrap: anywhere;
+  font-size: clamp(20px, 2.2vw, 30px) !important;
+  line-height: 1.12;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
 
 .metrics > p {
