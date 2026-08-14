@@ -1,0 +1,90 @@
+:root{
+  --navy:#0F1E34;
+  --orange:#FF6A00;
+  --steel:#496A82;
+  --slate:#B7C4CF;
+  --off:#F5F7F9;
+}
+
+html,body{max-width:100%;overflow-x:clip}
+body{font-family:Inter,system-ui,sans-serif}
+h1,h2,h3,.brand,.eyebrow,.button,.trust,.nav{font-family:Sora,system-ui,sans-serif}
+.nav .nav-cta,.primary{background:var(--orange)!important}
+.hero h1 em,.workflow h2 em,.eyebrow,.light{color:var(--orange)}
+.brand-logo{object-fit:contain}
+
+.platform,.metrics{overflow:clip}
+.demo-card{overflow:clip!important}
+.object-stage{overflow:clip}
+.spec-chip,.approval,.rev-note{transform:none!important;max-width:calc(100% - 16px)}
+.approval,.rev-note{right:8px}
+.revision-stage .c-c{right:15%}
+
+.hero-static-fallback{
+  position:absolute;
+  z-index:1;
+  top:17%;
+  right:5%;
+  width:42%;
+  height:66%;
+  display:grid;
+  place-items:center;
+  opacity:1;
+  transition:opacity .25s ease;
+  pointer-events:none;
+}
+.hero-static-fallback::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 50% 46%,rgba(73,106,130,.34),transparent 53%),
+    linear-gradient(rgba(183,196,207,.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(183,196,207,.07) 1px,transparent 1px);
+  background-size:auto,44px 44px,44px 44px;
+  mask-image:radial-gradient(circle,#000 35%,transparent 73%);
+}
+.fallback-garment{
+  position:relative;
+  width:min(250px,54%);
+  aspect-ratio:.76;
+  clip-path:polygon(20% 2%,37% 0,43% 15%,57% 15%,63% 0,80% 2%,100% 27%,84% 43%,77% 31%,78% 100%,22% 100%,23% 31%,16% 43%,0 27%);
+  background:linear-gradient(145deg,rgba(73,106,130,.82),rgba(15,30,52,.96));
+  box-shadow:0 30px 90px rgba(0,0,0,.55),inset 0 0 42px rgba(183,196,207,.08);
+  outline:1px solid rgba(183,196,207,.42);
+}
+.fallback-garment i{position:absolute;background:rgba(183,196,207,.38)}
+.fallback-garment i:nth-child(1){width:1px;height:72%;left:50%;top:16%}
+.fallback-garment i:nth-child(2){height:1px;width:50%;left:25%;top:40%}
+.fallback-garment i:nth-child(3){height:1px;width:46%;left:27%;top:62%}
+.fallback-garment i:nth-child(4){width:8px;height:8px;border-radius:50%;left:calc(50% - 4px);top:calc(40% - 4px);background:var(--orange);box-shadow:0 0 22px rgba(255,106,0,.7)}
+.hero-static-fallback p{
+  position:absolute;
+  bottom:3%;
+  margin:0;
+  color:var(--slate);
+  font:600 9px/1 Sora,system-ui,sans-serif;
+  letter-spacing:.2em;
+}
+.webgl-ready .hero-static-fallback{opacity:0}
+.no-webgl #webgl-stage{display:none}
+
+@media(max-width:900px){
+  .demo-card{overflow:clip!important}
+  .feature-grid{overflow:clip!important}
+}
+
+@media(max-width:800px){
+  .nav nav{background:var(--navy)}
+  .nav nav a{color:var(--off)}
+  .hero-static-fallback{top:8%;right:0;width:100%;height:58%;opacity:.42}
+  .webgl-ready .hero-static-fallback{opacity:.18}
+  .fallback-garment{width:min(210px,42%)}
+  .section-head h2,.cta h2,.workflow h2,.standards h2{overflow-wrap:anywhere}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  #webgl-stage{display:none}
+  .hero-static-fallback{opacity:1!important}
+}
