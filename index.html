@@ -35,14 +35,13 @@
   <main id="top">
     <section class="narrative" id="story" aria-label="Techloom product story">
       <div class="stage-shell" aria-hidden="true">
-        <div id="narrative-stage">
-          <div class="loom-fallback">
-            <div class="fallback-grid"></div>
-            <i class="orbit orbit-a"></i>
-            <i class="orbit orbit-b"></i>
-            <i class="orbit orbit-c"></i>
-            <img src="assets/techloom-logo-light.png" alt="" />
-          </div>
+        <div id="webgl-stage"></div>
+        <div class="loom-fallback">
+          <div class="fallback-grid"></div>
+          <i class="orbit orbit-a"></i>
+          <i class="orbit orbit-b"></i>
+          <i class="orbit orbit-c"></i>
+          <img src="assets/techloom-logo-light.png" alt="" />
         </div>
         <div class="stage-vignette"></div>
         <div class="stage-coordinate coordinate-a">TL / PRODUCT RECORD / 001</div>
@@ -181,7 +180,7 @@
   </footer>
 
   <script src="narrative.js"></script>
-  <script type="importmap">{"imports":{"three":"./assets/vendor/three.module.min.js"}}</script>
+  <script type="importmap">{"imports":{"three":"./assets/vendor/three.module.min.js","three/addons/":"./assets/vendor/addons/"}}</script>
   <script type="module" src="narrative-3d.js"></script>
 </body>
 </html>
