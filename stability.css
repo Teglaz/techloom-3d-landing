@@ -1,0 +1,184 @@
+/* Milan Stability Patch
+   Contains layout safeguards only. Original visual styles remain unchanged. */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Keep the WebGL composition inside the hero instead of behind every section. */
+.hero-3d {
+  overflow: hidden !important;
+  isolation: isolate;
+}
+
+#webgl-stage {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+}
+
+/* Preserve the glass cards while preventing perspective scaling from escaping
+   the page shell. */
+.metrics {
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr))
+    minmax(0, 1.2fr) !important;
+}
+
+.metrics > div,
+.metrics > p {
+  min-width: 0;
+  transform: none !important;
+}
+
+.metrics strong {
+  font-size: clamp(26px, 3vw, 42px) !important;
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
+.metrics > p {
+  overflow-wrap: anywhere;
+}
+
+.demo-card {
+  min-width: 0;
+  overflow: hidden !important;
+}
+
+.rev-note {
+  right: 12px !important;
+  max-width: calc(100% - 24px);
+  transform: none !important;
+}
+
+.revision-stage .c-c {
+  right: 18% !important;
+  transform: translateZ(70px) !important;
+}
+
+/* Visible only when WebGL cannot start. */
+.hero-webgl-fallback {
+  position: absolute;
+  z-index: 1;
+  top: 17%;
+  right: 6%;
+  width: 42%;
+  height: 66%;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity .2s ease;
+}
+
+.hero-webgl-fallback::before {
+  content: "";
+  position: absolute;
+  width: min(330px, 70%);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 99, 38, .58);
+  border-radius: 50%;
+  box-shadow:
+    0 0 90px rgba(76, 168, 223, .16),
+    inset 0 0 70px rgba(73, 106, 130, .12);
+}
+
+.hero-webgl-fallback::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(183, 196, 207, .06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(183, 196, 207, .06) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(circle, #000 24%, transparent 72%);
+}
+
+.hero-webgl-fallback img {
+  position: relative;
+  z-index: 1;
+  width: min(250px, 56%);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 55px rgba(0, 0, 0, .55));
+}
+
+.hero-webgl-fallback p {
+  position: absolute;
+  z-index: 1;
+  bottom: 8%;
+  margin: 0;
+  color: #8fa2b5;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: .2em;
+}
+
+.webgl-ready .hero-webgl-fallback {
+  opacity: 0;
+}
+
+.no-webgl #webgl-stage {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .metrics > *,
+  .feature-grid article {
+    transform: none !important;
+  }
+
+  .section-head,
+  .feature-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .section-head {
+    gap: 28px !important;
+  }
+
+  .feature-grid {
+    gap: 24px !important;
+  }
+
+  .platform {
+    padding: 100px 0 !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero-webgl-fallback {
+    top: 8%;
+    right: 0;
+    width: 100%;
+    height: 50%;
+    opacity: .42;
+  }
+
+  .webgl-ready .hero-webgl-fallback {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .metrics {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #webgl-stage {
+    display: none;
+  }
+
+  .hero-webgl-fallback {
+    opacity: 1 !important;
+  }
+}
