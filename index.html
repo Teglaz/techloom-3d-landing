@@ -3,71 +3,184 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Techloom turns product ideas into expert-validated, factory-ready technical documentation." />
-  <title>Techloom — AI-assisted tech packs</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="assets.css" />
-  <link rel="stylesheet" href="three.css" />
-  <link rel="stylesheet" href="three-v2.css" />
-  <link rel="stylesheet" href="immersive.css" />
-  <link rel="stylesheet" href="platform-3d.css" />
-  <link rel="stylesheet" href="platform-v2.css" />
+  <meta name="theme-color" content="#020914" />
+  <meta name="description" content="Techloom is building an AI-assisted, expert-validated system for structured, traceable apparel technical documentation." />
+  <meta property="og:title" content="Techloom — Apparel production data, controlled" />
+  <meta property="og:description" content="From product data to factory-ready documentation — a system being built to keep AI proposals, domain checks and expert decisions distinct." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Techloom — AI-assisted apparel technical documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="narrative.css" />
 </head>
 <body>
-  <header class="nav shell">
+  <a class="skip-link" href="#story">Skip to the story</a>
+
+  <header class="site-nav" aria-label="Primary navigation">
     <a class="brand" href="#top" aria-label="Techloom home">
-      <img class="brand-logo" src="assets/techloom-logo.png" alt="" />
+      <img src="assets/techloom-logo-light.png" alt="" />
       <span>TECHLOOM</span>
     </a>
-    <button class="menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
     <nav id="nav-links">
-      <a href="#platform">Platform</a><a href="#workflow">Workflow</a><a href="#validation">Validation</a>
-      <a class="nav-cta" href="#contact">Request a demo <span>↗</span></a>
+      <a href="#story">The system</a>
+      <a href="#principles">Principles</a>
+      <a href="#founder">Founder</a>
+      <a class="nav-action" href="#access">Request early access <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
   <main id="top">
-    <section class="hero hero-3d">
-      <div id="webgl-stage" aria-hidden="true"></div>
-      <div class="hero-hud"><span>PRODUCT DATA</span><span>TECHNICAL LOGIC</span><span>VALIDATED OUTPUT</span></div>
-      <div class="hero-copy reveal">
-        <p class="eyebrow"><span></span> AI-ASSISTED · EXPERT-VALIDATED</p>
-        <h1>From product data<br><em>to factory-ready documentation.</em></h1>
-        <p class="lede">Techloom turns sketches, references and technical inputs into structured, traceable documentation — while keeping AI-proposed values separate from expert-approved production decisions.</p>
-        <div class="actions"><a class="button primary" href="#contact">Request a demo <span>↗</span></a><a class="button ghost" href="#workflow">Explore the workflow</a></div>
-        <div class="trust"><span>STRUCTURED DATA</span><span>TRACEABLE DECISIONS</span><span>FACTORY-READY OUTPUT</span></div>
+    <section class="narrative" id="story" aria-label="Techloom product story">
+      <div class="stage-shell" aria-hidden="true">
+        <div id="webgl-stage"></div>
+        <div class="loom-fallback">
+          <div class="fallback-grid"></div>
+          <i class="orbit orbit-a"></i>
+          <i class="orbit orbit-b"></i>
+          <i class="orbit orbit-c"></i>
+          <img src="assets/techloom-logo-light.png" alt="" />
+        </div>
+        <div class="stage-vignette"></div>
+        <div class="stage-coordinate coordinate-a">TL / PRODUCT RECORD / 001</div>
+        <div class="stage-coordinate coordinate-b">SOURCE → PROPOSAL → DECISION → RELEASE</div>
+        <div class="scene-name" aria-hidden="true"><span>01</span><strong>PRODUCT INPUT</strong></div>
+        <div class="scroll-cue" aria-hidden="true"><i></i><span>Scroll to transform</span></div>
       </div>
-      <div class="hero-object-label"><span>PRODUCT DATA → TECHNICAL LOGIC → VALIDATED OUTPUT</span><strong>01</strong><p>Move the cursor.<br>Scroll through the layers.</p></div>
-    </section>
 
-    <section class="metrics shell">
-      <div><strong>STRUCTURED PRODUCT DATA</strong></div><div><strong>PROPOSED ≠ APPROVED</strong></div><div><strong>REVISION-CONTROLLED</strong></div><p>BRING ORDER<br>TO COMPLEXITY.</p>
-    </section>
+      <div class="chapter-progress" aria-hidden="true">
+        <span class="is-active"></span><span></span><span></span><span></span><span></span>
+      </div>
 
-    <section class="platform shell" id="platform">
-      <div class="section-head"><p class="eyebrow"><span></span> THE PLATFORM</p><h2>One product record.<br>Every decision traceable.</h2><p>Techloom connects source inputs, technical data, validation status and revision history in one controlled workflow — so product teams and manufacturers work from the same approved information.</p></div>
-      <div class="feature-grid">
-        <article class="demo-card garment-card"><b>01 / STRUCTURE</b><div class="object-stage garment-stage" aria-hidden="true"><div class="garment-layer back"></div><div class="garment-layer mid"></div><div class="garment-layer front"><i></i><i></i><i></i><i></i></div><span class="measure m1">BOM</span><span class="measure m2">MEASUREMENTS</span><span class="spec-chip">CONSTRUCTION</span></div><h3>Structured technical documentation</h3><p>Organize BOM, measurements, construction details and source references into a consistent technical product record.</p><a href="#contact">Explore tech packs →</a></article>
-        <article class="demo-card validation-card" id="validation"><b>02 / VALIDATE</b><div class="object-stage network-stage" aria-hidden="true"><div class="network-core">✓</div><i class="beam b1"></i><i class="beam b2"></i><i class="beam b3"></i><span class="node n1">PROPOSED</span><span class="node n2">REVIEW</span><span class="node n3">APPROVED</span><span class="approval">EXPERT APPROVED</span></div><h3>Proposed vs approved</h3><p>AI-assisted suggestions remain clearly marked until reviewed. Missing, ambiguous and conflicting information is surfaced before release.</p><a href="#contact">Meet the workflow →</a></article>
-        <article class="demo-card revision-card"><b>03 / TRACE</b><div class="object-stage revision-stage" aria-hidden="true"><div class="rev-cube c-a"><span>V1</span></div><div class="rev-cube c-b"><span>V2</span></div><div class="rev-cube c-c"><span>V3</span></div><i class="timeline"></i><span class="rev-note">LATEST / APPROVED</span></div><h3>Traceable revisions</h3><p>Preserve what changed, why it changed and which version is approved for sampling or production.</p><a href="#contact">View revision logic →</a></article>
+      <div class="chapters">
+        <article class="chapter chapter-hero is-active" data-scene="0" id="chapter-input">
+          <div class="chapter-inner">
+            <p class="kicker"><span>AI-ASSISTED</span><span>EXPERT-VALIDATED</span></p>
+            <h1>Garment intent,<br /><em>woven into</em><br />production truth.</h1>
+            <p class="chapter-copy">Techloom is being built to turn images, sketches, existing documents and product requirements into structured, traceable apparel documentation — while keeping AI proposals separate from expert decisions.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#access">Request early access <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="#chapter-problem">Enter the system <span aria-hidden="true">↓</span></a>
+            </div>
+            <p class="positioning">FROM PRODUCT DATA TO FACTORY-READY DOCUMENTATION.</p>
+          </div>
+        </article>
+
+        <article class="chapter chapter-right" data-scene="1" id="chapter-problem">
+          <div class="chapter-inner compact">
+            <p class="chapter-index">01 / THE PRODUCTION GAP</p>
+            <h2>A garment is one object.<br /><em>Its data rarely is.</em></h2>
+            <p class="chapter-copy">Measurements live in one file. Materials in another. Construction notes, revisions and decisions disappear into messages, marked-up PDFs and individual memory.</p>
+            <p class="chapter-note"><span>FRAGMENTED INPUT</span><span>UNRESOLVED GAPS</span><span>REVISION RISK</span></p>
+          </div>
+        </article>
+
+        <article class="chapter" data-scene="2" id="chapter-structure">
+          <div class="chapter-inner compact">
+            <p class="chapter-index">02 / THE TECHLOOM APPROACH</p>
+            <h2>Every value should<br /><em>show its work.</em></h2>
+            <p class="chapter-copy">The platform is being designed to preserve source, status, confidence, applicability and revision — then connect each technical value to the decisions and evidence behind it.</p>
+            <div class="status-sequence" aria-label="Controlled data states">
+              <span>SOURCE PROVIDED</span><i></i><span>AI PROPOSED</span><i></i><span>EXPERT VERIFIED</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter chapter-right" data-scene="3" id="chapter-validation">
+          <div class="chapter-inner compact">
+            <p class="chapter-index">03 / CONTROLLED VALIDATION</p>
+            <h2>Proposed is a state.<br /><em>Approved is a decision.</em></h2>
+            <p class="chapter-copy">AI may organize, extract and propose. Domain logic should surface missing or conflicting information. Qualified experts remain responsible for validation and release.</p>
+            <p class="rule-line"><strong>AI proposes.</strong><strong>Logic checks.</strong><strong>Experts decide.</strong></p>
+          </div>
+        </article>
+
+        <article class="chapter" data-scene="4" id="chapter-record">
+          <div class="chapter-inner compact">
+            <p class="chapter-index">04 / THE CONTROLLED RECORD</p>
+            <h2>One product record.<br /><em>Every dependency visible.</em></h2>
+            <p class="chapter-copy">The planned platform connects measurements and POMs, BOM, construction, patterns, operations, quality and revisions — creating documentation that can become factory-ready after scoped expert validation.</p>
+            <a class="button button-outline" href="#principles">See the operating principles <span aria-hidden="true">↓</span></a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="workflow" id="workflow"><div class="shell workflow-inner">
-      <div><p class="eyebrow light"><span></span> HOW IT WORKS</p><h2>From input<br><em>to controlled production data.</em></h2></div>
-      <ol><li><span>01</span><div><h3>Add your product input</h3><p>Upload a sketch, reference image, existing tech pack, measurements, material data or product requirements.</p></div></li><li><span>02</span><div><h3>Structure and detect gaps</h3><p>Techloom organizes the information and identifies missing, ambiguous or conflicting data.</p></div></li><li><span>03</span><div><h3>Review AI-assisted proposals</h3><p>Suggested values remain proposed — not approved — until they are technically reviewed and resolved.</p></div></li><li><span>04</span><div><h3>Approve and release</h3><p>Validated information is consolidated into a traceable, factory-ready technical package for sampling or production.</p></div></li></ol>
-    </div></section>
+    <section class="principles" id="principles">
+      <div class="section-shell">
+        <header class="editorial-head">
+          <p class="section-tag">THE SYSTEM CONTRACT</p>
+          <h2>Not an AI shortcut.<br />A controlled path to production.</h2>
+          <p>Techloom is designed around the places where apparel documentation fails: silent assumptions, disconnected dependencies and unclear responsibility.</p>
+        </header>
 
-    <section class="testimonial shell"><img src="assets/testimonial-aida.png" alt="Aida Čengić"><blockquote>“A tech pack should remove questions from the factory floor — not create new ones. Techloom is built to connect product intent with the technical decisions production actually needs.”</blockquote><div><strong>Aida Čengić</strong><span>Founder, Techloom · Head of Industrialization<br>MSc Clothing Technology &amp; Design</span></div></section>
+        <div class="contract-list">
+          <article><span>01</span><h3>AI proposes</h3><p>Extract, structure and generate bounded technical candidates.</p></article>
+          <article><span>02</span><h3>Domain logic checks</h3><p>Surface missing information, conflicts, dependencies and scope.</p></article>
+          <article><span>03</span><h3>Qualified experts validate</h3><p>Keep technical responsibility with the people authorized to decide.</p></article>
+          <article><span>04</span><h3>The evidence remains</h3><p>Preserve source, status, revision, rationale and decision history.</p></article>
+        </div>
+      </div>
+    </section>
 
-    <section class="standards shell" id="standards"><p class="eyebrow"><span></span> BUILT FOR MANUFACTURING</p><h2>Less ambiguity<br>before it reaches the factory.</h2><p>Techloom is not a one-click PDF generator.</p><p>It creates a controlled technical record where production-critical information can be reviewed, traced and approved.</p><div class="pill-row"><span>BOM & MATERIALS</span><span>MEASUREMENTS</span><span>CONSTRUCTION</span><span>MISSING INFORMATION</span><span>REVISIONS</span><span>APPROVALS</span></div></section>
+    <section class="record-map" aria-labelledby="record-map-title">
+      <div class="section-shell">
+        <div class="record-title">
+          <p class="section-tag">PLANNED PLATFORM SCOPE</p>
+          <h2 id="record-map-title">A technical product record should think in dependencies.</h2>
+        </div>
+        <div class="record-lines">
+          <div><span>01</span><strong>Measurements + POM</strong><small>FIT / SIZE / TOLERANCE</small></div>
+          <div><span>02</span><strong>Patterns</strong><small>PIECES / ALLOWANCES / GRADING</small></div>
+          <div><span>03</span><strong>BOM + Materials</strong><small>COMPONENT / PLACEMENT / SCOPE</small></div>
+          <div><span>04</span><strong>Construction</strong><small>SEAMS / STITCHES / WORKMANSHIP</small></div>
+          <div><span>05</span><strong>Operations</strong><small>SEQUENCE / METHOD / MACHINE</small></div>
+          <div><span>06</span><strong>Quality + Revisions</strong><small>CRITERIA / EVIDENCE / RELEASE</small></div>
+        </div>
+        <p class="scope-note">Planned capabilities are shown as product direction, not as a claim that every module is currently available or verified.</p>
+      </div>
+    </section>
 
-    <section class="cta shell" id="contact"><div><p class="eyebrow light"><span></span> READY TO BUILD?</p><h2>Turn product data into documentation<br>production can actually use.</h2><p>See how Techloom structures inputs, surfaces gaps and keeps technical decisions traceable from first draft to approved release.</p></div><a class="button white" href="mailto:hello@techloom.app">Request a demo <span>↗</span></a></section>
+    <section class="founder" id="founder">
+      <div class="section-shell founder-grid">
+        <div class="founder-image">
+          <img src="assets/aida-cengic-founder.png" alt="Aida Čengić, founder of Techloom" />
+          <span>FOUNDER / APPAREL INDUSTRIALIZATION</span>
+        </div>
+        <div class="founder-copy">
+          <p class="section-tag">BUILT FROM THE FACTORY FLOOR OUT</p>
+          <blockquote>“A tech pack should remove questions from production — not move them downstream.”</blockquote>
+          <p>Techloom is founded by Aida Čengić, an apparel industrialization leader with an MSc in Clothing Technology &amp; Design. The product direction starts with a practical question: what must be known, checked and traceable before documentation can safely guide sampling or production?</p>
+          <strong>Aida Čengić</strong>
+          <span>Founder, Techloom · Head of Industrialization</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="access" id="access">
+      <div class="section-shell access-inner">
+        <div>
+          <p class="section-tag">EARLY ACCESS</p>
+          <h2>Help shape a better technical handoff.</h2>
+          <p>For apparel product developers, technical designers, garment technologists and manufacturing teams who want clearer, more traceable documentation.</p>
+        </div>
+        <a class="button button-light" href="mailto:hello@techloom.app?subject=Techloom%20early%20access">Request early access <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
   </main>
-  <footer class="shell"><a class="brand" href="#top"><img class="brand-logo" src="assets/techloom-logo.png" alt=""><span>TECHLOOM</span></a><p>AI-assisted.<br>Expert-validated. Factory-ready.</p><div><a href="mailto:hello@techloom.app">hello@techloom.app</a><span>© 2026 Techloom</span></div></footer>
-  <script src="script.js"></script><script src="immersive.js"></script><script type="importmap">{"imports":{"three":"./assets/vendor/three.module.min.js","three/addons/":"./assets/vendor/addons/"}}</script><script type="module" src="three-scene.js"></script>
+
+  <footer>
+    <div class="section-shell footer-inner">
+      <a class="brand" href="#top"><img src="assets/techloom-logo-light.png" alt="" /><span>TECHLOOM</span></a>
+      <p>AI-assisted · Expert-validated</p>
+      <div><a href="mailto:hello@techloom.app">hello@techloom.app</a><span>© 2026 Techloom</span></div>
+    </div>
+  </footer>
+
+  <script src="narrative.js"></script>
+  <script type="importmap">{"imports":{"three":"./assets/vendor/three.module.min.js","three/addons/":"./assets/vendor/addons/"}}</script>
+  <script type="module" src="narrative-3d.js"></script>
 </body>
 </html>
