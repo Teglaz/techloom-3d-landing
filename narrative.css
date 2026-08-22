@@ -105,16 +105,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   transition: background 0.2s, border-color 0.2s !important;
 }
 .nav-action:hover { background: var(--orange); border-color: var(--orange); }
-.nav-action-demo {
-  background: var(--orange);
-  border-color: var(--orange);
-}
-.nav-action-demo:hover,
-.nav-action-demo:focus-visible {
-  background: #fff;
-  border-color: #fff;
-  color: var(--night) !important;
-}
 .menu-button { display: none; }
 
 .narrative {
